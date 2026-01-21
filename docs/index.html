@@ -208,8 +208,8 @@
 </head>
 <body data-lang="ja">
     <div class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLang('ja')">日本語</button>
-        <button class="lang-btn" onclick="switchLang('en')">English</button>
+        <button class="lang-btn active" onclick="switchLang('ja', this)">日本語</button>
+        <button class="lang-btn" onclick="switchLang('en', this)">English</button>
     </div>
     
     <section class="hero">
@@ -274,7 +274,7 @@
     </footer>
     
     <script>
-        function switchLang(lang) {
+        function switchLang(lang, buttonElement) {
             document.body.setAttribute('data-lang', lang);
             document.documentElement.setAttribute('lang', lang);
             
@@ -290,7 +290,17 @@
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            event.target.classList.add('active');
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            } else {
+                // If called without button click, find the button
+                const buttons = document.querySelectorAll('.lang-btn');
+                if (lang === 'ja') {
+                    buttons[0].classList.add('active');
+                } else {
+                    buttons[1].classList.add('active');
+                }
+            }
             
             // Save preference
             localStorage.setItem('preferredLang', lang);
@@ -300,8 +310,6 @@
         const savedLang = localStorage.getItem('preferredLang') || 'ja';
         if (savedLang === 'en') {
             switchLang('en');
-            document.querySelectorAll('.lang-btn')[1].classList.add('active');
-            document.querySelectorAll('.lang-btn')[0].classList.remove('active');
         }
     </script>
 </body>
