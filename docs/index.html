@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-ja="finite - 人生の残り時間を可視化するアプリ" data-lang-en="finite - Visualize Your Remaining Time">finite - 人生の残り時間を可視化するアプリ</title>
+    <title>finite - 人生の残り時間を可視化するアプリ</title>
     <style>
         :root {
             --bg-color: #0a0a0a;
@@ -336,14 +336,11 @@
             document.documentElement.setAttribute('lang', lang);
             
             // Update title
-            const title = document.querySelector('title');
-            if (title.hasAttribute('data-lang-ja') && title.hasAttribute('data-lang-en')) {
-                if (lang === 'ja') {
-                    title.textContent = title.getAttribute('data-lang-ja');
-                } else {
-                    title.textContent = title.getAttribute('data-lang-en');
-                }
-            }
+            const titles = {
+                ja: 'finite - 人生の残り時間を可視化するアプリ',
+                en: 'finite - Visualize Your Remaining Time'
+            };
+            document.title = titles[lang] || titles.ja;
             
             // Update active button
             document.querySelectorAll('.lang-btn').forEach(btn => {
