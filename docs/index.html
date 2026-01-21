@@ -62,16 +62,46 @@
             display: none;
         }
         
+        /* 日本語版のテキスト色 */
+        [data-lang-ja] {
+            color: #ccc !important;
+        }
+        
+        [data-lang-ja] p,
+        [data-lang-ja] li,
+        [data-lang-ja] span {
+            color: #ccc !important;
+        }
+        
+        [data-lang-ja] h1,
+        [data-lang-ja] h2,
+        [data-lang-ja] h3 {
+            color: #fff !important;
+        }
+        
         body[data-lang="en"] [data-lang-ja] {
             display: none;
         }
         
         body[data-lang="en"] [data-lang-en] {
-            display: block;
+            display: block !important;
+            color: #ccc !important;
         }
         
         body[data-lang="en"] [data-lang-en].inline {
-            display: inline;
+            display: inline !important;
+        }
+        
+        body[data-lang="en"] [data-lang-en] p,
+        body[data-lang="en"] [data-lang-en] li,
+        body[data-lang="en"] [data-lang-en] span {
+            color: #ccc !important;
+        }
+        
+        body[data-lang="en"] [data-lang-en] h1,
+        body[data-lang="en"] [data-lang-en] h2,
+        body[data-lang="en"] [data-lang-en] h3 {
+            color: #fff !important;
         }
         
         .hero {
