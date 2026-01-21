@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>利用規約 - finite</title>
+    <title data-lang-ja="利用規約 - finite" data-lang-en="Terms of Service - finite">利用規約 - finite</title>
     <style>
         :root {
             --bg-color: #0a0a0a;
@@ -25,6 +25,52 @@
             color: var(--text-color);
             line-height: 1.8;
             padding: 20px;
+        }
+        
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .lang-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .lang-btn.active {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        [data-lang-en] {
+            display: none;
+        }
+        
+        body[data-lang="en"] [data-lang-ja] {
+            display: none;
+        }
+        
+        body[data-lang="en"] [data-lang-en] {
+            display: block;
+        }
+        
+        body[data-lang="en"] [data-lang-en].inline {
+            display: inline;
         }
         
         .container {
@@ -112,69 +158,74 @@
         }
     </style>
 </head>
-<body>
+<body data-lang="ja">
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('ja')">日本語</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+    </div>
+    
     <div class="container">
-        <h1>利用規約</h1>
-        <p class="app-name">finite - 人生の残り時間を可視化するアプリ</p>
-        <p class="last-updated">最終更新日: 2026年1月7日</p>
+        <h1 data-lang-ja="利用規約" data-lang-en="Terms of Service"></h1>
+        <p class="app-name" data-lang-ja="finite - 人生の残り時間を可視化するアプリ" data-lang-en="finite - Visualize your remaining time"></p>
+        <p class="last-updated" data-lang-ja="最終更新日: 2026年1月7日" data-lang-en="Last Updated: January 7, 2026"></p>
         
         <div class="highlight">
-            <p>本利用規約（以下「本規約」）は、finite（以下「本アプリ」）の利用条件を定めるものです。本アプリをご利用いただく前に、本規約をよくお読みください。</p>
+            <p data-lang-ja="本利用規約（以下「本規約」）は、finite（以下「本アプリ」）の利用条件を定めるものです。本アプリをご利用いただく前に、本規約をよくお読みください。" data-lang-en="These Terms of Service (the 'Terms') set forth the terms and conditions for the use of finite (the 'App'). Please read these Terms carefully before using the App."></p>
         </div>
         
-        <h2>第1条（適用）</h2>
-        <p>本規約は、ユーザーと本アプリの開発者（以下「開発者」）との間の本アプリの利用に関わる一切の関係に適用されます。</p>
+        <h2 data-lang-ja="第1条（適用）" data-lang-en="Article 1 (Application)"></h2>
+        <p data-lang-ja="本規約は、ユーザーと本アプリの開発者（以下「開発者」）との間の本アプリの利用に関わる一切の関係に適用されます。" data-lang-en="These Terms apply to all relationships between users and the developer of this App (the 'Developer') regarding the use of this App."></p>
         
-        <h2>第2条（本アプリの目的）</h2>
-        <p>本アプリは、ユーザーが人生の有限性を意識し、大切な時間をより意識的に過ごすことを支援するためのツールです。</p>
+        <h2 data-lang-ja="第2条（本アプリの目的）" data-lang-en="Article 2 (Purpose of the App)"></h2>
+        <p data-lang-ja="本アプリは、ユーザーが人生の有限性を意識し、大切な時間をより意識的に過ごすことを支援するためのツールです。" data-lang-en="This App is a tool to help users be aware of life's finitude and live their precious time more consciously."></p>
         <ul>
-            <li>人生の残り時間の可視化</li>
-            <li>大切な人との残り時間の計算</li>
-            <li>やりたいことの管理</li>
-            <li>思い出の記録</li>
+            <li data-lang-ja="人生の残り時間の可視化" data-lang-en="Visualization of remaining life time"></li>
+            <li data-lang-ja="大切な人との残り時間の計算" data-lang-en="Calculation of remaining time with loved ones"></li>
+            <li data-lang-ja="やりたいことの管理" data-lang-en="Management of bucket list items"></li>
+            <li data-lang-ja="思い出の記録" data-lang-en="Memory recording"></li>
         </ul>
         
-        <h2>第3条（禁止事項）</h2>
-        <p>ユーザーは、本アプリの利用にあたり、以下の行為をしてはなりません。</p>
+        <h2 data-lang-ja="第3条（禁止事項）" data-lang-en="Article 3 (Prohibited Acts)"></h2>
+        <p data-lang-ja="ユーザーは、本アプリの利用にあたり、以下の行為をしてはなりません。" data-lang-en="Users must not engage in the following acts when using this App:"></p>
         <ul>
-            <li>法令または公序良俗に違反する行為</li>
-            <li>本アプリの運営を妨害する行為</li>
-            <li>本アプリのリバースエンジニアリング、逆コンパイル、逆アセンブル</li>
-            <li>その他、開発者が不適切と判断する行為</li>
+            <li data-lang-ja="法令または公序良俗に違反する行為" data-lang-en="Acts that violate laws or public order and morals"></li>
+            <li data-lang-ja="本アプリの運営を妨害する行為" data-lang-en="Acts that interfere with the operation of this App"></li>
+            <li data-lang-ja="本アプリのリバースエンジニアリング、逆コンパイル、逆アセンブル" data-lang-en="Reverse engineering, decompilation, or disassembly of this App"></li>
+            <li data-lang-ja="その他、開発者が不適切と判断する行為" data-lang-en="Other acts deemed inappropriate by the Developer"></li>
         </ul>
         
-        <h2>第4条（本アプリの提供の停止等）</h2>
-        <p>開発者は、以下のいずれかの事由があると判断した場合、ユーザーに事前に通知することなく本アプリの全部または一部の提供を停止または中断することができます。</p>
+        <h2 data-lang-ja="第4条（本アプリの提供の停止等）" data-lang-en="Article 4 (Suspension of App Services)"></h2>
+        <p data-lang-ja="開発者は、以下のいずれかの事由があると判断した場合、ユーザーに事前に通知することなく本アプリの全部または一部の提供を停止または中断することができます。" data-lang-en="The Developer may suspend or discontinue all or part of this App's services without prior notice to users if any of the following circumstances are determined:"></p>
         <ul>
-            <li>本アプリの保守点検または更新を行う場合</li>
-            <li>地震、落雷、火災、停電または天災などの不可抗力により提供が困難となった場合</li>
-            <li>その他、開発者が提供の停止または中断を必要と判断した場合</li>
+            <li data-lang-ja="本アプリの保守点検または更新を行う場合" data-lang-en="When performing maintenance, inspection, or updates of this App"></li>
+            <li data-lang-ja="地震、落雷、火災、停電または天災などの不可抗力により提供が困難となった場合" data-lang-en="When service provision becomes difficult due to force majeure such as earthquakes, lightning, fires, power outages, or natural disasters"></li>
+            <li data-lang-ja="その他、開発者が提供の停止または中断を必要と判断した場合" data-lang-en="Other cases where the Developer deems it necessary to suspend or discontinue services"></li>
         </ul>
         
-        <h2>第5条（免責事項）</h2>
+        <h2 data-lang-ja="第5条（免責事項）" data-lang-en="Article 5 (Disclaimer)"></h2>
         <div class="highlight warning">
-            <p><strong>重要:</strong> 本アプリで表示される「残り時間」は、ユーザーが入力した予想寿命に基づく概算です。実際の寿命を保証するものではありません。</p>
+            <p><strong data-lang-ja="重要:" data-lang-en="Important:"></strong> <span data-lang-ja="本アプリで表示される「残り時間」は、ユーザーが入力した予想寿命に基づく概算です。実際の寿命を保証するものではありません。" data-lang-en="The 'remaining time' displayed in this App is an estimate based on the expected lifespan entered by the user. It does not guarantee actual lifespan."></span></p>
         </div>
-        <p>開発者は、本アプリに関して、以下の事項について一切の責任を負いません。</p>
+        <p data-lang-ja="開発者は、本アプリに関して、以下の事項について一切の責任を負いません。" data-lang-en="The Developer assumes no responsibility for the following matters regarding this App:"></p>
         <ul>
-            <li>本アプリの利用により生じたいかなる損害</li>
-            <li>本アプリの正確性、完全性、有用性</li>
-            <li>本アプリの利用による精神的影響</li>
-            <li>データの消失または破損</li>
+            <li data-lang-ja="本アプリの利用により生じたいかなる損害" data-lang-en="Any damages arising from the use of this App"></li>
+            <li data-lang-ja="本アプリの正確性、完全性、有用性" data-lang-en="The accuracy, completeness, or usefulness of this App"></li>
+            <li data-lang-ja="本アプリの利用による精神的影響" data-lang-en="Psychological effects from using this App"></li>
+            <li data-lang-ja="データの消失または破損" data-lang-en="Data loss or corruption"></li>
         </ul>
         
-        <h2>第6条（サービス内容の変更等）</h2>
-        <p>開発者は、ユーザーに通知することなく、本アプリの内容を変更または提供を中止することができ、これによってユーザーに生じた損害について一切の責任を負いません。</p>
+        <h2 data-lang-ja="第6条（サービス内容の変更等）" data-lang-en="Article 6 (Changes to Service Content)"></h2>
+        <p data-lang-ja="開発者は、ユーザーに通知することなく、本アプリの内容を変更または提供を中止することができ、これによってユーザーに生じた損害について一切の責任を負いません。" data-lang-en="The Developer may change the content of this App or discontinue its provision without notice to users, and assumes no responsibility for any damages incurred by users as a result."></p>
         
-        <h2>第7条（利用規約の変更）</h2>
-        <p>開発者は、必要と判断した場合には、ユーザーに通知することなく本規約を変更することができます。変更後の利用規約は、本ページに掲載した時点から効力を生じるものとします。</p>
+        <h2 data-lang-ja="第7条（利用規約の変更）" data-lang-en="Article 7 (Changes to Terms)"></h2>
+        <p data-lang-ja="開発者は、必要と判断した場合には、ユーザーに通知することなく本規約を変更することができます。変更後の利用規約は、本ページに掲載した時点から効力を生じるものとします。" data-lang-en="The Developer may change these Terms without notice to users if deemed necessary. The revised Terms shall take effect from the time they are posted on this page."></p>
         
-        <h2>第8条（準拠法・裁判管轄）</h2>
-        <p>本規約の解釈にあたっては、日本法を準拠法とします。本アプリに関して紛争が生じた場合には、開発者の所在地を管轄する裁判所を専属的合意管轄とします。</p>
+        <h2 data-lang-ja="第8条（準拠法・裁判管轄）" data-lang-en="Article 8 (Governing Law and Jurisdiction)"></h2>
+        <p data-lang-ja="本規約の解釈にあたっては、日本法を準拠法とします。本アプリに関して紛争が生じた場合には、開発者の所在地を管轄する裁判所を専属的合意管轄とします。" data-lang-en="These Terms shall be governed by Japanese law. In the event of a dispute regarding this App, the court having jurisdiction over the Developer's location shall have exclusive jurisdiction."></p>
         
         <div class="contact">
-            <h2 style="margin-top: 0; border: none;">お問い合わせ</h2>
-            <p>本規約に関するお問い合わせは、以下までお願いいたします。</p>
+            <h2 style="margin-top: 0; border: none;" data-lang-ja="お問い合わせ" data-lang-en="Contact"></h2>
+            <p data-lang-ja="本規約に関するお問い合わせは、以下までお願いいたします。" data-lang-en="For inquiries regarding these Terms, please contact us at:"></p>
             <p><a href="mailto:gumilianger06@gmail.com">gumilianger06@gmail.com</a></p>
         </div>
         
@@ -182,5 +233,37 @@
             <p>© Ryoji Tanigome. All rights reserved.</p>
         </footer>
     </div>
+    
+    <script>
+        function switchLang(lang) {
+            document.body.setAttribute('data-lang', lang);
+            document.documentElement.setAttribute('lang', lang);
+            
+            // Update title
+            const title = document.querySelector('title');
+            if (lang === 'ja') {
+                title.textContent = title.getAttribute('data-lang-ja');
+            } else {
+                title.textContent = title.getAttribute('data-lang-en');
+            }
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('preferredLang', lang);
+        }
+        
+        // Load saved preference
+        const savedLang = localStorage.getItem('preferredLang') || 'ja';
+        if (savedLang === 'en') {
+            switchLang('en');
+            document.querySelectorAll('.lang-btn')[1].classList.add('active');
+            document.querySelectorAll('.lang-btn')[0].classList.remove('active');
+        }
+    </script>
 </body>
 </html>

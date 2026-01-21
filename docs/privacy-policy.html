@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー - finite</title>
+    <title data-lang-ja="プライバシーポリシー - finite" data-lang-en="Privacy Policy - finite">プライバシーポリシー - finite</title>
     <style>
         :root {
             --bg-color: #0a0a0a;
@@ -25,6 +25,52 @@
             color: var(--text-color);
             line-height: 1.8;
             padding: 20px;
+        }
+        
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .lang-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .lang-btn.active {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        [data-lang-en] {
+            display: none;
+        }
+        
+        body[data-lang="en"] [data-lang-ja] {
+            display: none;
+        }
+        
+        body[data-lang="en"] [data-lang-en] {
+            display: block;
+        }
+        
+        body[data-lang="en"] [data-lang-en].inline {
+            display: inline;
         }
         
         .container {
@@ -107,60 +153,65 @@
         }
     </style>
 </head>
-<body>
+<body data-lang="ja">
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('ja')">日本語</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+    </div>
+    
     <div class="container">
-        <h1>プライバシーポリシー</h1>
-        <p class="app-name">finite - 人生の残り時間を可視化するアプリ</p>
-        <p class="last-updated">最終更新日: 2026年1月7日</p>
+        <h1 data-lang-ja="プライバシーポリシー" data-lang-en="Privacy Policy"></h1>
+        <p class="app-name" data-lang-ja="finite - 人生の残り時間を可視化するアプリ" data-lang-en="finite - Visualize your remaining time"></p>
+        <p class="last-updated" data-lang-ja="最終更新日: 2026年1月7日" data-lang-en="Last Updated: January 7, 2026"></p>
         
         <div class="highlight">
-            <p><strong>finiteはユーザーのプライバシーを尊重します。</strong><br>
-            このアプリはデータをデバイス内にのみ保存し、外部サーバーには一切送信しません。</p>
+            <p><strong data-lang-ja="finiteはユーザーのプライバシーを尊重します。" data-lang-en="finite respects user privacy."></strong><br>
+            <span data-lang-ja="このアプリはデータをデバイス内にのみ保存し、外部サーバーには一切送信しません。" data-lang-en="This app stores data only on your device and does not send it to any external servers."></span></p>
         </div>
         
-        <h2>1. 収集する情報</h2>
-        <p>finiteは以下の情報をお使いのデバイス内にのみ保存します：</p>
+        <h2 data-lang-ja="1. 収集する情報" data-lang-en="1. Information We Collect"></h2>
+        <p data-lang-ja="finiteは以下の情報をお使いのデバイス内にのみ保存します：" data-lang-en="finite stores the following information only on your device:"></p>
         <ul>
-            <li>生年月日</li>
-            <li>性別</li>
-            <li>予想寿命</li>
-            <li>大切な人の情報（生まれ年、関係性、予想寿命）</li>
-            <li>やりたいこと（タイムバケット）</li>
-            <li>思い出の記録</li>
-            <li>タイムカプセル</li>
-            <li>アプリの設定</li>
+            <li data-lang-ja="生年月日" data-lang-en="Date of birth"></li>
+            <li data-lang-ja="性別" data-lang-en="Gender"></li>
+            <li data-lang-ja="予想寿命" data-lang-en="Expected lifespan"></li>
+            <li data-lang-ja="大切な人の情報（生まれ年、関係性、予想寿命）" data-lang-en="Information about loved ones (birth year, relationship, expected lifespan)"></li>
+            <li data-lang-ja="やりたいこと（タイムバケット）" data-lang-en="Bucket list items (Time Bucket)"></li>
+            <li data-lang-ja="思い出の記録" data-lang-en="Memory records"></li>
+            <li data-lang-ja="タイムカプセル" data-lang-en="Time Capsule"></li>
+            <li data-lang-ja="アプリの設定" data-lang-en="App settings"></li>
         </ul>
         
-        <h2>2. 情報の利用目的</h2>
-        <p>保存された情報は以下の目的でのみ使用されます：</p>
+        <h2 data-lang-ja="2. 情報の利用目的" data-lang-en="2. How We Use Information"></h2>
+        <p data-lang-ja="保存された情報は以下の目的でのみ使用されます：" data-lang-en="Stored information is used only for the following purposes:"></p>
         <ul>
-            <li>人生の残り時間の計算と表示</li>
-            <li>大切な人との残り時間の計算</li>
-            <li>やりたいことの管理と通知</li>
-            <li>思い出の記録と配当計算</li>
+            <li data-lang-ja="人生の残り時間の計算と表示" data-lang-en="Calculate and display remaining life time"></li>
+            <li data-lang-ja="大切な人との残り時間の計算" data-lang-en="Calculate remaining time with loved ones"></li>
+            <li data-lang-ja="やりたいことの管理と通知" data-lang-en="Manage bucket list items and notifications"></li>
+            <li data-lang-ja="思い出の記録と配当計算" data-lang-en="Record memories and calculate dividends"></li>
         </ul>
         
-        <h2>3. 情報の共有</h2>
-        <p>finiteは、ユーザーの情報を第三者と共有することはありません。すべてのデータはお使いのデバイス内にのみ保存され、広告表示時を除き、インターネットを通じて送信されることはありません。</p>
+        <h2 data-lang-ja="3. 情報の共有" data-lang-en="3. Information Sharing"></h2>
+        <p data-lang-ja="finiteは、ユーザーの情報を第三者と共有することはありません。すべてのデータはお使いのデバイス内にのみ保存され、広告表示時を除き、インターネットを通じて送信されることはありません。" data-lang-en="finite does not share user information with third parties. All data is stored only on your device and is not transmitted over the internet except when displaying advertisements."></p>
         
-        <h2>4. データの保存</h2>
-        <p>すべてのデータはiOSのUserDefaultsおよびローカルストレージに保存されます。iCloudへの同期は行いません。</p>
+        <h2 data-lang-ja="4. データの保存" data-lang-en="4. Data Storage"></h2>
+        <p data-lang-ja="すべてのデータはiOSのUserDefaultsおよびローカルストレージに保存されます。iCloudへの同期は行いません。" data-lang-en="All data is stored in iOS UserDefaults and local storage. We do not sync to iCloud."></p>
         
-        <h2>5. データの削除</h2>
-        <p>アプリ内の設定画面から「データを削除」を選択することで、すべてのデータを削除できます。また、アプリをアンインストールすることでもすべてのデータが削除されます。</p>
+        <h2 data-lang-ja="5. データの削除" data-lang-en="5. Data Deletion"></h2>
+        <p data-lang-ja="アプリ内の設定画面から「データを削除」を選択することで、すべてのデータを削除できます。また、アプリをアンインストールすることでもすべてのデータが削除されます。" data-lang-en="You can delete all data by selecting 'Delete Data' from the app's settings screen. Uninstalling the app will also delete all data."></p>
         
-        <h2>6. 分析・広告</h2>
-        <p>finiteはGoogle AdMobを使用して広告を表示します。広告表示のため、Google AdMobがデバイス情報や広告IDを収集する場合があります。詳細は<a href="https://policies.google.com/privacy" target="_blank">Googleのプライバシーポリシー</a>をご確認ください。ユーザーの行動を追跡することはありません。</p>
+        <h2 data-lang-ja="6. 分析・広告" data-lang-en="6. Analytics & Advertising"></h2>
+        <p data-lang-ja="finiteはGoogle AdMobを使用して広告を表示します。広告表示のため、Google AdMobがデバイス情報や広告IDを収集する場合があります。詳細は<a href='https://policies.google.com/privacy' target='_blank'>Googleのプライバシーポリシー</a>をご確認ください。ユーザーの行動を追跡することはありません。" data-lang-en="finite uses Google AdMob to display advertisements. For ad display, Google AdMob may collect device information and advertising IDs. For details, please see <a href='https://policies.google.com/privacy' target='_blank'>Google's Privacy Policy</a>. We do not track user behavior."></p>
         
-        <h2>7. 子供のプライバシー</h2>
-        <p>finiteは13歳未満の子供から意図的に個人情報を収集することはありません。</p>
+        <h2 data-lang-ja="7. 子供のプライバシー" data-lang-en="7. Children's Privacy"></h2>
+        <p data-lang-ja="finiteは13歳未満の子供から意図的に個人情報を収集することはありません。" data-lang-en="finite does not knowingly collect personal information from children under 13 years of age."></p>
         
-        <h2>8. プライバシーポリシーの変更</h2>
-        <p>本プライバシーポリシーは予告なく変更される場合があります。変更があった場合は、このページに掲載します。</p>
+        <h2 data-lang-ja="8. プライバシーポリシーの変更" data-lang-en="8. Changes to Privacy Policy"></h2>
+        <p data-lang-ja="本プライバシーポリシーは予告なく変更される場合があります。変更があった場合は、このページに掲載します。" data-lang-en="This privacy policy may be changed without notice. Any changes will be posted on this page."></p>
         
         <div class="contact">
-            <h2 style="margin-top: 0; border: none;">9. お問い合わせ</h2>
-            <p>プライバシーに関するご質問やご懸念がある場合は、以下までお問い合わせください：</p>
+            <h2 style="margin-top: 0; border: none;" data-lang-ja="9. お問い合わせ" data-lang-en="9. Contact"></h2>
+            <p data-lang-ja="プライバシーに関するご質問やご懸念がある場合は、以下までお問い合わせください：" data-lang-en="If you have any questions or concerns about privacy, please contact us at:"></p>
             <p><a href="mailto:gumilianger06@gmail.com">gumilianger06@gmail.com</a></p>
         </div>
         
@@ -168,5 +219,37 @@
             <p>© Ryoji Tanigome. All rights reserved.</p>
         </footer>
     </div>
+    
+    <script>
+        function switchLang(lang) {
+            document.body.setAttribute('data-lang', lang);
+            document.documentElement.setAttribute('lang', lang);
+            
+            // Update title
+            const title = document.querySelector('title');
+            if (lang === 'ja') {
+                title.textContent = title.getAttribute('data-lang-ja');
+            } else {
+                title.textContent = title.getAttribute('data-lang-en');
+            }
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('preferredLang', lang);
+        }
+        
+        // Load saved preference
+        const savedLang = localStorage.getItem('preferredLang') || 'ja';
+        if (savedLang === 'en') {
+            switchLang('en');
+            document.querySelectorAll('.lang-btn')[1].classList.add('active');
+            document.querySelectorAll('.lang-btn')[0].classList.remove('active');
+        }
+    </script>
 </body>
 </html>
