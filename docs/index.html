@@ -58,25 +58,9 @@
             border-color: var(--accent-color);
         }
         
+        /* 言語切り替えの基本設定 */
         [data-lang-en] {
             display: none;
-        }
-        
-        /* 日本語版のテキスト色 */
-        [data-lang-ja] {
-            color: #ccc !important;
-        }
-        
-        [data-lang-ja] p,
-        [data-lang-ja] li,
-        [data-lang-ja] span {
-            color: #ccc !important;
-        }
-        
-        [data-lang-ja] h1,
-        [data-lang-ja] h2,
-        [data-lang-ja] h3 {
-            color: #fff !important;
         }
         
         body[data-lang="en"] [data-lang-ja] {
@@ -84,24 +68,7 @@
         }
         
         body[data-lang="en"] [data-lang-en] {
-            display: block !important;
-            color: #ccc !important;
-        }
-        
-        body[data-lang="en"] [data-lang-en].inline {
-            display: inline !important;
-        }
-        
-        body[data-lang="en"] [data-lang-en] p,
-        body[data-lang="en"] [data-lang-en] li,
-        body[data-lang="en"] [data-lang-en] span {
-            color: #ccc !important;
-        }
-        
-        body[data-lang="en"] [data-lang-en] h1,
-        body[data-lang="en"] [data-lang-en] h2,
-        body[data-lang="en"] [data-lang-en] h3 {
-            color: #fff !important;
+            display: inline;
         }
         
         .hero {
@@ -245,58 +212,118 @@
     <section class="hero">
         <div class="logo">⏳</div>
         <h1>finite</h1>
-        <p class="tagline" data-lang-ja="人生の残り時間を可視化する" data-lang-en="Visualize your remaining time"></p>
-        <p style="color: #666; margin-bottom: 2rem;" data-lang-ja="限りある時間を、最大限に生きる" data-lang-en="Make the most of your finite time"></p>
+        <p class="tagline">
+            <span data-lang-ja>人生の残り時間を可視化する</span>
+            <span data-lang-en>Visualize your remaining time</span>
+        </p>
+        <p style="color: #666; margin-bottom: 2rem;">
+            <span data-lang-ja>限りある時間を、最大限に生きる</span>
+            <span data-lang-en>Make the most of your finite time</span>
+        </p>
         
         <!-- App Storeリンク（公開後に差し替え） -->
-        <span class="coming-soon" data-lang-ja="App Storeで近日公開" data-lang-en="Coming Soon on App Store"></span>
+        <span class="coming-soon">
+            <span data-lang-ja>App Storeで近日公開</span>
+            <span data-lang-en>Coming Soon on App Store</span>
+        </span>
     </section>
     
     <section class="features">
-        <h2 data-lang-ja="機能" data-lang-en="Features"></h2>
+        <h2>
+            <span data-lang-ja>機能</span>
+            <span data-lang-en>Features</span>
+        </h2>
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="feature-icon">⏰</div>
-                <h3 data-lang-ja="残り時間の可視化" data-lang-en="Time Visualization"></h3>
-                <p data-lang-ja="あなたの人生の残り時間を日数で表示。有限性を意識することで、今この瞬間を大切にできます。" data-lang-en="Display your remaining life time in days. Being aware of finitude helps you cherish the present moment."></p>
+                <h3>
+                    <span data-lang-ja>残り時間の可視化</span>
+                    <span data-lang-en>Time Visualization</span>
+                </h3>
+                <p>
+                    <span data-lang-ja>あなたの人生の残り時間を日数で表示。有限性を意識することで、今この瞬間を大切にできます。</span>
+                    <span data-lang-en>Display your remaining life time in days. Being aware of finitude helps you cherish the present moment.</span>
+                </p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">👨‍👩‍👧‍👦</div>
-                <h3 data-lang-ja="大切な人との時間" data-lang-en="Time with Loved Ones"></h3>
-                <p data-lang-ja="両親、パートナー、子供との残り時間を計算。「今しかできないこと」に気づくきっかけに。" data-lang-en="Calculate remaining time with parents, partners, and children. Discover what you can only do now."></p>
+                <h3>
+                    <span data-lang-ja>大切な人との時間</span>
+                    <span data-lang-en>Time with Loved Ones</span>
+                </h3>
+                <p>
+                    <span data-lang-ja>両親、パートナー、子供との残り時間を計算。「今しかできないこと」に気づくきっかけに。</span>
+                    <span data-lang-en>Calculate remaining time with parents, partners, and children. Discover what you can only do now.</span>
+                </p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">✅</div>
-                <h3 data-lang-ja="やりたいことリスト" data-lang-en="Bucket List"></h3>
-                <p data-lang-ja="「いつか」を「◯歳までに」に変えて、人生を計画。関係性に基づいた期限アラートも。" data-lang-en="Transform 'someday' into 'by age X' and plan your life. Get deadline alerts based on relationships."></p>
+                <h3>
+                    <span data-lang-ja>やりたいことリスト</span>
+                    <span data-lang-en>Bucket List</span>
+                </h3>
+                <p>
+                    <span data-lang-ja>「いつか」を「◯歳までに」に変えて、人生を計画。関係性に基づいた期限アラートも。</span>
+                    <span data-lang-en>Transform 'someday' into 'by age X' and plan your life. Get deadline alerts based on relationships.</span>
+                </p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📸</div>
-                <h3 data-lang-ja="思い出の配当" data-lang-en="Memory Dividends"></h3>
-                <p data-lang-ja="経験を記録して「配当」を可視化。今した経験は、残りの人生すべてで価値を生み続けます。" data-lang-en="Record experiences and visualize 'dividends'. Experiences you have now will continue to create value for the rest of your life."></p>
+                <h3>
+                    <span data-lang-ja>思い出の配当</span>
+                    <span data-lang-en>Memory Dividends</span>
+                </h3>
+                <p>
+                    <span data-lang-ja>経験を記録して「配当」を可視化。今した経験は、残りの人生すべてで価値を生み続けます。</span>
+                    <span data-lang-en>Record experiences and visualize 'dividends'. Experiences you have now will continue to create value for the rest of your life.</span>
+                </p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📅</div>
-                <h3 data-lang-ja="ライフカレンダー" data-lang-en="Life Calendar"></h3>
-                <p data-lang-ja="人生を週単位のグリッドで表示。過ごした時間と残りの時間を一目で把握。" data-lang-en="View your life as a weekly grid. See past and remaining time at a glance."></p>
+                <h3>
+                    <span data-lang-ja>ライフカレンダー</span>
+                    <span data-lang-en>Life Calendar</span>
+                </h3>
+                <p>
+                    <span data-lang-ja>人生を週単位のグリッドで表示。過ごした時間と残りの時間を一目で把握。</span>
+                    <span data-lang-en>View your life as a weekly grid. See past and remaining time at a glance.</span>
+                </p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">✉️</div>
-                <h3 data-lang-ja="タイムカプセル" data-lang-en="Time Capsule"></h3>
-                <p data-lang-ja="未来の自分へメッセージを残す。設定した日付に届く、特別な手紙。" data-lang-en="Leave messages for your future self. Special letters that arrive on your chosen date."></p>
+                <h3>
+                    <span data-lang-ja>タイムカプセル</span>
+                    <span data-lang-en>Time Capsule</span>
+                </h3>
+                <p>
+                    <span data-lang-ja>未来の自分へメッセージを残す。設定した日付に届く、特別な手紙。</span>
+                    <span data-lang-en>Leave messages for your future self. Special letters that arrive on your chosen date.</span>
+                </p>
             </div>
         </div>
     </section>
     
     <section class="quote-section">
-        <blockquote class="quote" data-lang-ja='"人生は有限。だからこそ、今日を大切に。"' data-lang-en='"Life is finite. That\'s why today matters."'></blockquote>
+        <blockquote class="quote">
+            <span data-lang-ja>"人生は有限。だからこそ、今日を大切に。"</span>
+            <span data-lang-en>"Life is finite. That's why today matters."</span>
+        </blockquote>
         <p class="quote-author">— finite</p>
     </section>
     
     <section class="links">
-        <a href="privacy-policy.html" data-lang-ja="プライバシーポリシー" data-lang-en="Privacy Policy"></a>
-        <a href="terms.html" data-lang-ja="利用規約" data-lang-en="Terms of Service"></a>
-        <a href="mailto:gumilianger06@gmail.com" data-lang-ja="お問い合わせ" data-lang-en="Contact"></a>
+        <a href="privacy-policy.html">
+            <span data-lang-ja>プライバシーポリシー</span>
+            <span data-lang-en>Privacy Policy</span>
+        </a>
+        <a href="terms.html">
+            <span data-lang-ja>利用規約</span>
+            <span data-lang-en>Terms of Service</span>
+        </a>
+        <a href="mailto:gumilianger06@gmail.com">
+            <span data-lang-ja>お問い合わせ</span>
+            <span data-lang-en>Contact</span>
+        </a>
     </section>
     
     <footer>
@@ -310,10 +337,12 @@
             
             // Update title
             const title = document.querySelector('title');
-            if (lang === 'ja') {
-                title.textContent = title.getAttribute('data-lang-ja');
-            } else {
-                title.textContent = title.getAttribute('data-lang-en');
+            if (title.hasAttribute('data-lang-ja') && title.hasAttribute('data-lang-en')) {
+                if (lang === 'ja') {
+                    title.textContent = title.getAttribute('data-lang-ja');
+                } else {
+                    title.textContent = title.getAttribute('data-lang-en');
+                }
             }
             
             // Update active button
@@ -336,11 +365,11 @@
             localStorage.setItem('preferredLang', lang);
         }
         
-        // Load saved preference
-        const savedLang = localStorage.getItem('preferredLang') || 'ja';
-        if (savedLang === 'en') {
-            switchLang('en');
-        }
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang') || 'ja';
+            switchLang(savedLang);
+        });
     </script>
 </body>
 </html>
